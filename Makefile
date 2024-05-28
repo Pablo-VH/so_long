@@ -28,6 +28,9 @@ SRC			=	map_check/so_long.c\
 				map_check/so_end.c\
 				map_check/check_content.c\
 				map_check/copy_map.c\
+				map_check/check_chars.c\
+				map_check/free_aux.c\
+				map_check/check_u_n_d.c\
 
 OBJ			= 	$(SRC:.c=.o)
 

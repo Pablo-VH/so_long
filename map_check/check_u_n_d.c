@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   number_lines.c                                     :+:      :+:    :+:   */
+/*   check_u_n_d.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pavicent <pavicent@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/27 12:35:59 by pavicent          #+#    #+#             */
-/*   Updated: 2024/05/27 12:36:03 by pavicent         ###   ########.fr       */
+/*   Created: 2024/05/28 14:09:10 by pavicent          #+#    #+#             */
+/*   Updated: 2024/05/28 14:09:13 by pavicent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/so_long.h"
 
-int	number_lines(char *argv)
+int	check_u_n_d(t_map **map)
 {
-	int		num_lines;
-	int		fd;
-	char	*line;
+	int	i;
 
-	num_lines = 0;
-	fd = open(argv, O_RDONLY);
-	if (fd == -1)
+	i = 0;
+	while ((*map)->map[0])
 	{
-		perror ("Error al abrir el archivo");
-		exit(1);
+		if ((*map)->map[0][i] != '1' && (*map)->map[0][i] != '\n')
+			return (1);
+		i++;
 	}
-	while (1)
+	i = 0;
+	while ((*map)->map[(*map)->t_length - 1])
 	{
-		line = get_next_line(fd);
-		if (!line)
-			break ;
-		free(line);
-		num_lines++;
+		if ((*map)->map[(*map)->t_length - 1][i] != '1' && (*map)->map[(*map)->t_length - 1][i] != '\n')
+			return (1);
+		i++;
 	}
-	close(fd);
-	//printf("%d\n", num_lines);
-	return (num_lines);
+	return (0);
 }

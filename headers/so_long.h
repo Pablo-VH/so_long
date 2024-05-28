@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -38,7 +37,10 @@ int		check_w(t_map **map);
 void	free_map(t_map *map);
 int		map_len(char *str);
 void	so_end(t_map *map);
-int		check_content(t_map **map);
-char	**copy_map(t_map **map, char **checker);
+int		check_content(t_map **map, char *argv);
+char	**copy_map(char *argv, char **checker);
+int		check_chars(char **checker, t_map **map);
+void	free_aux(char **checker);
+int		check_u_n_d(t_map **map);
 
 #endif

@@ -19,11 +19,10 @@ int	map_len(char *str)
 	i = 0;
 	if (str == NULL)
 		return (0);
-	
 	while (str[i])
 	{
 		if (str[i] == '\n')
-			break;
+			break ;
 		i++;
 	}
 	return (i);

@@ -12,14 +12,28 @@
 
 #include "../headers/so_long.h"
 
-int	check_content(t_map **map)
+int	check_content(t_map **map, char *argv)
 {
 	char	**checker;
 
-	checker = (char **)malloc(sizeof(char*) * (*map)->t_length + 1);
-	checker = copy_map(map, checker);
-	if(check_chars(checker) == 1)
+	checker = (char **)malloc(sizeof(char *) * ((*map)->t_length + 1));
+	checker = copy_map(argv, checker);
+	if (check_chars(checker, map) == 1)
+	{
+		free_aux(checker);
 		return (1);
-	free(checker);
-	return(0);
+	}
+	/*if (check_limits(map) == 1)
+	{
+		free_aux(checker);
+		return (1);
+	}*/
+	if (check_u_n_d(map) == 1)
+	{
+		free_aux(checker);
+		return (1);	
+	}
+	printf("P = %d C = %d E = %d", (*map)->player, (*map)->coin, (*map)->exit);
+	free_aux(checker);
+	return (0);
 }

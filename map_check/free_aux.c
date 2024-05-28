@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   number_lines.c                                     :+:      :+:    :+:   */
+/*   free_aux.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pavicent <pavicent@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/27 12:35:59 by pavicent          #+#    #+#             */
-/*   Updated: 2024/05/27 12:36:03 by pavicent         ###   ########.fr       */
+/*   Created: 2024/05/28 14:10:02 by pavicent          #+#    #+#             */
+/*   Updated: 2024/05/28 14:10:05 by pavicent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/so_long.h"
 
-int	number_lines(char *argv)
+void	free_aux(char **checker)
 {
-	int		num_lines;
-	int		fd;
-	char	*line;
+	int	i;
 
-	num_lines = 0;
-	fd = open(argv, O_RDONLY);
-	if (fd == -1)
+	i = 0;
+	while (checker[i])
 	{
-		perror ("Error al abrir el archivo");
-		exit(1);
+		free(checker[i]);
+		i++;
 	}
-	while (1)
-	{
-		line = get_next_line(fd);
-		if (!line)
-			break ;
-		free(line);
-		num_lines++;
-	}
-	close(fd);
-	//printf("%d\n", num_lines);
-	return (num_lines);
+	free(checker);
+	checker = NULL;
 }

@@ -12,20 +12,27 @@
 
 #include "../headers/so_long.h"
 
-char	**copy_map(t_map **map, char **checker)
+char	**copy_map(char *argv, char **checker)
 {
 	int	i;
+	int	fd;
 
 	i = 0;
-	while ((*map)->map[i])
+	fd = open(argv, O_RDONLY);
+	if (fd == -1)
+		return (NULL);
+	
+	while (1)
 	{
-		checker[i] = (*map)->map[i];
+		checker[i] = get_next_line(fd);
+		if (checker[i] == NULL)
+			break ;
 		i++;
 	}
 	printf("\ncopy_map: Dentro de checker\n");
-	for (int k = 0; k < (*map)->t_length ; k++)
+	for (int k = 0; k < i; k++)
 	{
 		printf("%s\n", checker[k]);
 	}
-	return(checker);
+	return (checker);
 }

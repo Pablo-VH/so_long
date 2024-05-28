@@ -10,12 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../headers/so_long.h"
 
 int	check_w(t_map **map)
 {
-	int		i;
+	int	i;
 	int	first;
 
 	i = 0;
