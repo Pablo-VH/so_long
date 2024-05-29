@@ -22,6 +22,8 @@ typedef struct s_map
 	int		player;
 	int		exit;
 	int		coin;
+	int		x;
+	int		y;
 	int		w_length;
 	int		t_length;
 	int		items;
@@ -31,16 +33,19 @@ typedef struct s_map
 void	init_map(char *argv);
 void	fill_map(char *argv, t_map **map);
 void	so_error(int error, t_map *map);
+void	free_map(t_map *map);
+void	so_end(t_map *map);
+void	free_aux(char **checker);
+void	pos_player(t_map **map);
+char	**copy_map(char *argv, char **checker);
 int		check_name(char *argv, char *end);
 int		number_lines(char *argv);
 int		check_w(t_map **map);
-void	free_map(t_map *map);
 int		map_len(char *str);
-void	so_end(t_map *map);
 int		check_content(t_map **map, char *argv);
-char	**copy_map(char *argv, char **checker);
 int		check_chars(char **checker, t_map **map);
-void	free_aux(char **checker);
 int		check_u_n_d(t_map **map);
+int		check_lr(t_map **map);
+int		check_limits(t_map **map);
 
 #endif

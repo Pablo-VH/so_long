@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_u_n_d.c                                      :+:      :+:    :+:   */
+/*   check_lr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pavicent <pavicent@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 14:09:10 by pavicent          #+#    #+#             */
-/*   Updated: 2024/05/28 14:09:13 by pavicent         ###   ########.fr       */
+/*   Created: 2024/05/29 10:49:27 by pavicent          #+#    #+#             */
+/*   Updated: 2024/05/29 10:49:28 by pavicent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/so_long.h"
 
-int	check_u_n_d(t_map **map)
+int	check_lr(t_map **map)
 {
 	int	i;
 
 	i = 0;
-	while ((*map)->map[0][i])
+	printf("%d\n", (*map)->w_length);
+	while ((*map)->map[i])
 	{
-		if ((*map)->map[0][i] != '1' && (*map)->map[0][i] != '\n')
+		if ((*map)->map[i][0] != '1')
 			return (1);
 		i++;
 	}
 	i = 0;
-	while ((*map)->map[(*map)->t_length - 1][i])
+	while ((*map)->map[i])
 	{
-		if ((*map)->map[(*map)->t_length - 1][i] != '1' && (*map)->map[(*map)->t_length - 1][i] != '\n')
+		if ((*map)->map[i][(*map)->w_length - 1] != '1')
 			return (1);
 		i++;
 	}

@@ -31,6 +31,9 @@ SRC			=	map_check/so_long.c\
 				map_check/check_chars.c\
 				map_check/free_aux.c\
 				map_check/check_u_n_d.c\
+				map_check/check_lr.c\
+				map_check/check_limits.c\
+				map_check/pos_player.c\
 
 OBJ			= 	$(SRC:.c=.o)
 

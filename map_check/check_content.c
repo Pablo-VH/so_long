@@ -15,25 +15,30 @@
 int	check_content(t_map **map, char *argv)
 {
 	char	**checker;
+	int		i;
+	int		j;
+	int		k;
+	int		l;
 
 	checker = (char **)malloc(sizeof(char *) * ((*map)->t_length + 1));
 	checker = copy_map(argv, checker);
-	if (check_chars(checker, map) == 1)
-	{
-		free_aux(checker);
-		return (1);
-	}
-	/*if (check_limits(map) == 1)
-	{
-		free_aux(checker);
-		return (1);
-	}*/
-	if (check_u_n_d(map) == 1)
+	i = check_chars(checker, map);
+	j = check_limits(map);
+	k = check_u_n_d(map);
+	l = check_lr(map);
+	printf("i = %d, j = %d, k = %d, l = %d", i, j, k, l);
+	if (i == 1 || j == 1 || k == 1 || l == 1)
 	{
 		free_aux(checker);
 		return (1);	
 	}
-	printf("P = %d C = %d E = %d", (*map)->player, (*map)->coin, (*map)->exit);
+	pos_player(map);
+	if (parsing(checker) == 1){
+		free_aux(checker);
+		return (1);
+	}
+	printf("\nP = %d C = %d E = %d\n", (*map)->player, (*map)->coin, (*map)->exit);
+	printf("Posicion jugador: %d,%d", (*map)->y, (*map)->x);
 	free_aux(checker);
 	return (0);
 }
