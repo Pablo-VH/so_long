@@ -37,6 +37,7 @@ void	free_map(t_map *map);
 void	so_end(t_map *map);
 void	free_aux(char **checker);
 void	pos_player(t_map **map);
+void	parsing(char **checker, int x, int y);
 char	**copy_map(char *argv, char **checker);
 int		check_name(char *argv, char *end);
 int		number_lines(char *argv);
@@ -47,5 +48,7 @@ int		check_chars(char **checker, t_map **map);
 int		check_u_n_d(t_map **map);
 int		check_lr(t_map **map);
 int		check_limits(t_map **map);
+int		init_parsing(char **checker, t_map **map);
+int		is_valid(char **checker);
 
 #endif

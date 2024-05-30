@@ -34,6 +34,8 @@ SRC			=	map_check/so_long.c\
 				map_check/check_lr.c\
 				map_check/check_limits.c\
 				map_check/pos_player.c\
+				map_check/parsing.c\
+				map_check/is_valid.c\
 
 OBJ			= 	$(SRC:.c=.o)
 

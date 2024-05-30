@@ -26,19 +26,19 @@ int	check_content(t_map **map, char *argv)
 	j = check_limits(map);
 	k = check_u_n_d(map);
 	l = check_lr(map);
-	printf("i = %d, j = %d, k = %d, l = %d", i, j, k, l);
 	if (i == 1 || j == 1 || k == 1 || l == 1)
 	{
 		free_aux(checker);
-		return (1);	
+		return (1);
 	}
 	pos_player(map);
-	if (parsing(checker) == 1){
+	if (init_parsing(checker, map) == 1)
+	{
 		free_aux(checker);
 		return (1);
 	}
-	printf("\nP = %d C = %d E = %d\n", (*map)->player, (*map)->coin, (*map)->exit);
-	printf("Posicion jugador: %d,%d", (*map)->y, (*map)->x);
 	free_aux(checker);
 	return (0);
 }
+/*	printf("\nP = %d C = %d E = %d\n", (*map)->player, (*map)->coin, (*map)->exit);
+	printf("Posicion jugador: %d,%d", (*map)->y, (*map)->x);*/
