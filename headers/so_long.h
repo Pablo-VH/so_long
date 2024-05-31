@@ -16,6 +16,7 @@
 # include "libft.h"
 # include <fcntl.h>
 # include <stdio.h>
+# include "../mlx_linux/mlx.h"
 
 typedef struct s_map
 {

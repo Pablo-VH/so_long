@@ -37,6 +37,7 @@ SRC			=	map_check/so_long.c\
 				map_check/parsing.c\
 				map_check/is_valid.c\
 
+
 OBJ			= 	$(SRC:.c=.o)
 
 PATHLIBFT	= -L libft -lft
@@ -45,7 +46,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	cd libft && $(MAKE)
-	$(CC) $(CFLAGS) $(OBJ) $(PATHLIBFT) -g -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) $(PATHLIBFT) $(LIBS) -g -o $(NAME)
 
 clean:
 	cd libft && $(MAKE) clean
