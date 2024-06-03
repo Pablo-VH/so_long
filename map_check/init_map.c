@@ -12,10 +12,8 @@
 
 #include "../headers/so_long.h"
 
-void	init_map(char *argv)
+void	init_map(char *argv, t_map *map)
 {
-	t_map	*map;
-
 	map = malloc(sizeof(t_map));
 	if (check_name(argv, ".ber") == 1)
 		so_error(1, map);

@@ -15,5 +15,4 @@
 void	so_end(t_map *map)
 {
 	free_map(map);
-	exit(1);
 }

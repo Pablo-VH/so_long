@@ -37,11 +37,6 @@ int	check_content(t_map **map, char *argv)
 		free_aux(checker);
 		return (1);
 	}
-	/*for (int p = 0; p < (*map)->t_length; p++)
-	{
-		printf("%s\n", checker[k]);
-		printf("%d", p);
-	}*/
 	free_aux(checker);
 	return (0);
 }

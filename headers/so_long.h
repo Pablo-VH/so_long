@@ -31,7 +31,7 @@ typedef struct s_map
 	char	**map;
 }			t_map;
 
-void	init_map(char *argv);
+void	init_map(char *argv, t_map *map);
 void	fill_map(char *argv, t_map **map);
 void	so_error(int error, t_map *map);
 void	free_map(t_map *map);
