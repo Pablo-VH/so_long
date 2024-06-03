@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/danpalac/leined/repos/so_long/libft",
-      "program": "/home/danpalac/leined/repos/so_long/libft/build/Debug/outDebug",
+      "cwd": "/home/danpalac/leined/repos/so_long/srcs",
+      "program": "/home/danpalac/leined/repos/so_long/srcs/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

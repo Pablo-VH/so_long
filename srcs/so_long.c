@@ -29,6 +29,7 @@ int	main(int argc, char **argv)
 	mlx_pixel_put(mlx, mlx_win, 10, 10, 0xFFFFFF);
 	mlx_hook(mlx_win, 17, 1L >> 0, destroy_win, argv[1]);
 	mlx_loop(mlx);*/
+	ft_putstr_fd("hola", 1);
 	return (0);
 }
 
