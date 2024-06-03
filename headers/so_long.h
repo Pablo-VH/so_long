@@ -17,6 +17,7 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include "../mlx_linux/mlx.h"
+# include "../mlx_linux/mlx_int.h"
 
 typedef struct s_map
 {
@@ -27,7 +28,6 @@ typedef struct s_map
 	int		y;
 	int		w_length;
 	int		t_length;
-	int		items;
 	char	**map;
 }			t_map;
 

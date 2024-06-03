@@ -13,8 +13,13 @@
 NAME		= so_long
 LIBFTNAME	= libft.a
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror $(HEADER) -fsanitize=address,leak
-HEADERS		= -I ./headers
+CFLAGS		= -Wall -Wextra -Werror -g3 -fsanitize=address,leak $(HEADERS) 
+HEADERS		= -I ./headers/ -I ./mlx_linux/
+MLX_DIR		= mlx_linux/
+MLX			= $(MLX_DIR)libmlx.a
+MLX_LINUX	= $(MLX_DIR)libmlx_Linux.a
+LIBFT_DIR	= libft/
+LDFLAGS     = -L$(LIBFT_DIR) -lft -L$(MLX_DIR) $(MLX) $(MLX_LINUX) -lX11 -lXext -lm -lbsd
 
 SRC			=	map_check/so_long.c\
 				map_check/init_map.c\
@@ -40,20 +45,22 @@ SRC			=	map_check/so_long.c\
 
 OBJ			= 	$(SRC:.c=.o)
 
-PATHLIBFT	= -L libft -lft
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	cd libft && $(MAKE)
-	$(CC) $(CFLAGS) $(OBJ) $(PATHLIBFT) $(LIBS) -g -o $(NAME)
+	make -C $(MLX_DIR)
+	$(CC) $(CFLAGS) $(OBJ) $(LDFLAGS) -o $(NAME)
+
 
 clean:
 	cd libft && $(MAKE) clean
+	cd mlx_linux && $(MAKE) clean
 	rm -f $(OBJ)
 
 fclean: clean
-	cd libft && $(MAKE) fclean
+	cd libft && $(MAKE) fclean 
 	rm -f $(NAME)
 
 re: fclean all

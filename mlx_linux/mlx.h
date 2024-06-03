@@ -31,8 +31,6 @@
 
 #define	MLX_H
 
-# include "../headers/so_long.h"
-
 
 void	*mlx_init();
 /*
