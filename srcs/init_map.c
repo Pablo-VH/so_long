@@ -30,5 +30,4 @@ void	init_map(char *argv, t_map *map)
 	{
 		printf("%s", map->map[j]);
 	}
-	so_end(map);
 }

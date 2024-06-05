@@ -33,7 +33,7 @@ SRCS_FILES	= so_long.c init_map.c check_name.c \
 			check_content.c copy_map.c check_chars.c\
 			free_aux.c check_u_n_d.c check_lr.c\
 			check_limits.c pos_player.c parsing.c\
-			is_valid.c\
+			is_valid.c init_mlx.c\
 
 OBJS_FILES  = $(SRCS_FILES:.c=.o)
 

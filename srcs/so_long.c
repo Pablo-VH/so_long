@@ -14,8 +14,6 @@
 
 int	main(int argc, char **argv)
 {
-	//void	*mlx;
-	//void	*mlx_win;
 	t_map	map;
 
 	if (argc != 2)
@@ -23,13 +21,10 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	init_map(argv[1], &map);
-	/*
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
-	mlx_pixel_put(mlx, mlx_win, 10, 10, 0xFFFFFF);
-	mlx_hook(mlx_win, 17, 1L >> 0, destroy_win, argv[1]);
-	mlx_loop(mlx);*/
-	ft_putstr_fd("hola", 1);
+	init_mlx(&map);
+
+	printf("Hola");
+	so_end(&map);
 	return (0);
 }
 

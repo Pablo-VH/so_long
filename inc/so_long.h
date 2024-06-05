@@ -19,6 +19,24 @@
 # include <stdio.h>
 # include <stdio.h>
 
+typedef enum	s_numimg {
+	COIN,
+	EXIT,
+	PLAYER,
+	WALL,
+	FLOOR,
+	TOTAL
+}				t_numimg;
+
+typedef struct	s_data {
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+	int		width;
+	int		height;
+}				t_data;
 typedef struct s_map
 {
 	int		player;
@@ -29,6 +47,9 @@ typedef struct s_map
 	int		w_length;
 	int		t_length;
 	char	**map;
+	void	*mlx;
+	void	*mlx_win;
+	t_data	*images[TOTAL];
 }			t_map;
 
 void	init_map(char *argv, t_map *map);
@@ -39,6 +60,7 @@ void	so_end(t_map *map);
 void	free_aux(char **checker);
 void	pos_player(t_map **map);
 void	parsing(char **checker, int x, int y);
+void 	init_mlx(t_map *map);
 char	**copy_map(char *argv, char **checker);
 int		check_name(char *argv, char *end);
 int		number_lines(char *argv);
