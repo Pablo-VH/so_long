@@ -10,59 +10,66 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= so_long
-LIBFTNAME	= libft.a
-CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -g3 -fsanitize=address,leak $(HEADERS) 
-HEADERS		= -I ./headers/ -I ./mlx_linux/
-MLX_DIR		= mlx_linux/
-MLX			= $(MLX_DIR)libmlx.a
-MLX_LINUX	= $(MLX_DIR)libmlx_Linux.a
-LIBFT_DIR	= libft/
+NAME        = so_long
+CC          = gcc
+CFLAGS      = -Wextra -Werror -Wall -g3 -fsanitize=address -I$(INC) -I$(LIBFT_DIR)inc/ -I$(MLX_DIR)
 LDFLAGS     = -L$(LIBFT_DIR) -lft -L$(MLX_DIR) $(MLX) $(MLX_LINUX) -lX11 -lXext -lm -lbsd
 
-SRC			=	map_check/so_long.c\
-				map_check/init_map.c\
-				map_check/check_name.c\
-				map_check/number_lines.c\
-				map_check/fill_map.c\
-				map_check/so_error.c\
-				map_check/check_w.c\
-				map_check/free_map.c\
-				map_check/map_len.c\
-				map_check/so_end.c\
-				map_check/check_content.c\
-				map_check/copy_map.c\
-				map_check/check_chars.c\
-				map_check/free_aux.c\
-				map_check/check_u_n_d.c\
-				map_check/check_lr.c\
-				map_check/check_limits.c\
-				map_check/pos_player.c\
-				map_check/parsing.c\
-				map_check/is_valid.c\
+INC         = inc/
+map        = assets/maps
 
+LIBFT_DIR   = libft/
+LIBFT       = $(LIBFT_DIR)libft.a
 
-OBJ			= 	$(SRC:.c=.o)
+MLX_DIR     = mlx_linux/
+MLX         = $(MLX_DIR)libmlx.a
+MLX_LINUX   = $(MLX_DIR)libmlx_Linux.a
 
+SRCS_DIR    = srcs/
+OBJS_DIR    = objs/
+SRCS_FILES	= so_long.c init_map.c check_name.c \
+			number_lines.c fill_map.c so_error.c\
+			check_w.c free_map.c map_len.c so_end.c \
+			check_content.c copy_map.c check_chars.c\
+			free_aux.c check_u_n_d.c check_lr.c\
+			check_limits.c pos_player.c parsing.c\
+			is_valid.c\
+
+OBJS_FILES  = $(SRCS_FILES:.c=.o)
+
+SRCS        = $(addprefix $(SRCS_DIR), $(SRCS_FILES))
+OBJS        = $(addprefix $(OBJS_DIR), $(OBJS_FILES))
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	cd libft && $(MAKE)
-	make -C $(MLX_DIR)
-	$(CC) $(CFLAGS) $(OBJ) $(LDFLAGS) -o $(NAME)
+$(NAME): $(LIBFT) $(MLX) $(OBJS)
+	@echo "\nCompiling $(BLUE)$(NAME)$(DEF_COLOR)"
+	@$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) -o $(NAME)
+	@echo "\n$(GREEN)$(NAME) compiled!$(DEF_COLOR)"
+	@echo "$(BOLD_CYAN)\n------------\n| Done! 👌 |\n------------$(DEF_COLOR)"
 
+$(OBJS_DIR)%.o: $(SRCS_DIR)%.c
+	@[ -d $(OBJS_DIR) ] || mkdir -p $(OBJS_DIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(LIBFT):
+	@echo "\nCompiling $(BLUE)libft$(DEF_COLOR)"
+	@make -sC $(LIBFT_DIR)
+
+$(MLX):
+	@echo "\nCompiling $(BLUE)mlx$(DEF_COLOR)"
+	@make -sC $(MLX_DIR)
 
 clean:
-	cd libft && $(MAKE) clean
-	cd mlx_linux && $(MAKE) clean
-	rm -f $(OBJ)
+	rm -rf $(OBJS_DIR)
+	make fclean -sC $(LIBFT_DIR)
+	make clean -sC $(MLX_DIR)
 
 fclean: clean
-	cd libft && $(MAKE) fclean 
-	rm -f $(NAME)
+	rm -rf $(NAME)
+	@echo "$(GREEN)$(NAME)$(YELLOW) cleaned$(DEF_COLOR)"
 
 re: fclean all
 
-.PHONY:	fclean all clean all bonus
+.PHONY: all clean fclean re
+.SILENT: all clean fclean
