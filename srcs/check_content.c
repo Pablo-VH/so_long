@@ -12,7 +12,7 @@
 
 #include "so_long.h"
 
-int	check_content(t_map **map, char *argv)
+int	check_content(t_map *map, char *argv)
 {
 	char	**checker;
 	int		i;
@@ -20,7 +20,7 @@ int	check_content(t_map **map, char *argv)
 	int		k;
 	int		l;
 
-	checker = (char **)malloc(sizeof(char *) * ((*map)->t_length + 1));
+	checker = (char **)malloc(sizeof(char *) * (map->t_length + 1));
 	checker = copy_map(argv, checker);
 	i = check_chars(checker, map);
 	j = check_limits(map);
@@ -40,5 +40,3 @@ int	check_content(t_map **map, char *argv)
 	free_aux(checker);
 	return (0);
 }
-/*	printf("\nP = %d C = %d E = %d\n", (*map)->player, (*map)->coin, (*map)->exit);
-	printf("Posicion jugador: %d,%d", (*map)->y, (*map)->x);*/

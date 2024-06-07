@@ -12,22 +12,23 @@
 
 #include "so_long.h"
 
-int	init_parsing(char **checker, t_map **map)
+int	init_parsing(char **checker, t_map *map)
 {
 	int	x;
 	int	y;
 	int	i;
 
-	x = (*map)->x;
-	y = (*map)->y;
+	x = map->play.x_pos;
+	y = map->play.y_pos;
 	parsing(checker, x, y);
 	i = is_valid(checker);
-	for (int p = 0; p < (*map)->t_length; p++)
+	for (int p = 0; p < map->t_length; p++)
 	{
 		printf("%s\n", checker[p]);
 	}
 	return (i);
 }
+
 void	parsing(char **checker, int x, int y)
 {
 	checker[y][x] = 'P';

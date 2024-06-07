@@ -12,7 +12,7 @@
 
 #include "so_long.h"
 
-void	fill_map(char *argv, t_map **map)
+void	fill_map(char *argv, t_map *map)
 {
 	int		nl;
 	int		fd;
@@ -20,21 +20,21 @@ void	fill_map(char *argv, t_map **map)
 
 	i = 0;
 	nl = number_lines(argv);
-	(*map)->t_length = nl;
-	(*map)->map = (char **)malloc((sizeof (char *) * (nl + 1)));
-	if (!(*map)->map)
+	map->t_length = nl;
+	map->map = (char **)malloc((sizeof (char *) * (nl + 1)));
+	if (!map->map)
 		exit(1);
-	(*map)->map[nl] = NULL;
+	map->map[nl] = NULL;
 	fd = open(argv, O_RDONLY);
 	while (i < nl)
 	{
-		(*map)->map[i] = get_next_line(fd);
+		map->map[i] = get_next_line(fd);
 		i++;
 	}
 	close(fd);
 	printf("fill_map\n");
 	for (int j = 0; j < nl; j++)
 	{
-		printf("%s", (*map)->map[j]);
+		printf("%s", map->map[j]);
 	}
 }

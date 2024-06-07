@@ -14,17 +14,16 @@
 
 int	main(int argc, char **argv)
 {
-	t_map	map;
+	t_map	*map;
 
 	if (argc != 2)
 	{
 		return (1);
 	}
 	init_map(argv[1], &map);
-	init_mlx(&map);
-
+	init_game(&map);
 	printf("Hola");
-	so_end(&map);
+	so_end(map);
 	return (0);
 }
 

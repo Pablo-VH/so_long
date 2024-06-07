@@ -12,19 +12,19 @@
 
 #include "so_long.h"
 
-int	check_w(t_map **map)
+int	check_w(t_map *map)
 {
 	int	i;
 	int	first;
 
 	i = 0;
-	first = map_len((*map)->map[i]);
-	while ((*map)->map[i])
+	first = map_len(map->map[i]);
+	while (map->map[i])
 	{
-		if (first != map_len((*map)->map[i]))
+		if (first != map_len(map->map[i]))
 			return (1);
 		i++;
 	}
-	(*map)->w_length = first;
+	map->w_length = first;
 	return (0);
 }

@@ -12,13 +12,13 @@
 
 #include "so_long.h"
 
-int	check_limits(t_map **map)
+int	check_limits(t_map *map)
 {
-	if ((*map)->coin < 1)
+	if (map->coin < 1)
 		return (1);
-	if ((*map)->exit != 1)
+	if (map->exit != 1)
 		return (1);
-	if ((*map)->player != 1)
+	if (map->player != 1)
 		return (1);
-	return (0);	
+	return (0);
 }

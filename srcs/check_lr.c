@@ -12,22 +12,24 @@
 
 #include "so_long.h"
 
-int	check_lr(t_map **map)
+int	check_lr(t_map *map)
 {
 	int	i;
+	int	j;
 
+	j = map->w_length - 1;
 	i = 0;
-	printf("%d\n", (*map)->w_length);
-	while ((*map)->map[i])
+	printf("%d\n", map->w_length);
+	while (map->map[i])
 	{
-		if ((*map)->map[i][0] != '1')
+		if (map->map[i][0] != '1')
 			return (1);
 		i++;
 	}
 	i = 0;
-	while ((*map)->map[i])
+	while (map->map[i])
 	{
-		if ((*map)->map[i][(*map)->w_length - 1] != '1')
+		if (map->map[i][j] != '1')
 			return (1);
 		i++;
 	}

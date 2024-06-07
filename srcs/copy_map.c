@@ -21,7 +21,6 @@ char	**copy_map(char *argv, char **checker)
 	fd = open(argv, O_RDONLY);
 	if (fd == -1)
 		return (NULL);
-	
 	while (1)
 	{
 		checker[i] = get_next_line(fd);

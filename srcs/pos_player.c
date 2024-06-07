@@ -12,21 +12,21 @@
 
 #include "so_long.h"
 
-void	pos_player(t_map **map)
+void	pos_player(t_map *map)
 {
 	int	i;
 	int	j;
-	
+
 	i = 0;
-	while ((*map)->map[i])
+	while (map->map[i])
 	{
 		j = 0;
-		while ((*map)->map[i][j])
+		while (map->map[i][j])
 		{
-			if ((*map)->map[i][j] == 'P')
+			if (map->map[i][j] == 'P')
 			{
-				(*map)->y = i;
-				(*map)->x = j;
+				map->play.y_pos = i;
+				map->play.x_pos = j;
 			}
 			j++;
 		}

@@ -13,6 +13,7 @@
 NAME        = so_long
 CC          = gcc
 CFLAGS      = -Wextra -Werror -Wall -g3 -fsanitize=address -I$(INC) -I$(LIBFT_DIR)inc/ -I$(MLX_DIR)
+#-g3 -fsanitize=address 
 LDFLAGS     = -L$(LIBFT_DIR) -lft -L$(MLX_DIR) $(MLX) $(MLX_LINUX) -lX11 -lXext -lm -lbsd
 
 INC         = inc/
@@ -33,7 +34,9 @@ SRCS_FILES	= so_long.c init_map.c check_name.c \
 			check_content.c copy_map.c check_chars.c\
 			free_aux.c check_u_n_d.c check_lr.c\
 			check_limits.c pos_player.c parsing.c\
-			is_valid.c init_mlx.c\
+			is_valid.c init_game.c init_img.c find_exit.c\
+			init_background.c hooks.c destroy_all.c\
+			player_move.c\
 
 OBJS_FILES  = $(SRCS_FILES:.c=.o)
 

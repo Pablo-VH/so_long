@@ -12,21 +12,23 @@
 
 #include "so_long.h"
 
-int	check_u_n_d(t_map **map)
+int	check_u_n_d(t_map *map)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while ((*map)->map[0][i])
+	j = map->t_length - 1;
+	while (map->map[0][i])
 	{
-		if ((*map)->map[0][i] != '1' && (*map)->map[0][i] != '\n')
+		if (map->map[0][i] != '1' && map->map[0][i] != '\n')
 			return (1);
 		i++;
 	}
 	i = 0;
-	while ((*map)->map[(*map)->t_length - 1][i])
+	while (map->map[j][i])
 	{
-		if ((*map)->map[(*map)->t_length - 1][i] != '1' && (*map)->map[(*map)->t_length - 1][i] != '\n')
+		if (map->map[j][i] != '1' && map->map[j][i] != '\n')
 			return (1);
 		i++;
 	}
