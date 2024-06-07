@@ -27,6 +27,7 @@ int	key_press_hook(int keycode, t_map **map)
 		destroy_all(map);
 		exit(1);
 	}
+	init_background(map);
 	return (0);
 }
 
@@ -57,9 +58,11 @@ void	set_mv(int keycode, t_map **map)
 void	set_y(t_map **map, int i)
 {
 	(*map)->play.y_pos = (*map)->play.y_pos + i;
+	(*map)->map[(*map)->play.y_pos][(*map)->play.x_pos] = 'P';
 }
 
 void	set_x(t_map **map, int i)
 {
 	(*map)->play.x_pos = (*map)->play.x_pos + i;
+	(*map)->map[(*map)->play.y_pos][(*map)->play.x_pos] = 'P';
 }
