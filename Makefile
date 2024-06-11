@@ -12,12 +12,12 @@
 
 NAME        = so_long
 CC          = gcc
-CFLAGS      = -Wextra -Werror -Wall -g3 -fsanitize=address -I$(INC) -I$(LIBFT_DIR)inc/ -I$(MLX_DIR)
+CFLAGS      = -Wextra -Werror -Wall -I$(INC) -I$(LIBFT_DIR)inc/ -I$(MLX_DIR) -I$(PRINTF_DIR)inc/
 #-g3 -fsanitize=address 
-LDFLAGS     = -L$(LIBFT_DIR) -lft -L$(MLX_DIR) $(MLX) $(MLX_LINUX) -lX11 -lXext -lm -lbsd
+LDFLAGS     = -L$(LIBFT_DIR) -lft -L$(MLX_DIR) $(MLX) $(MLX_LINUX) -lX11 -lXext -lm -lbsd -L$(PRINTF_DIR) $(PRINTF) -lftprintf
 
 INC         = inc/
-map        = assets/maps
+map        	= assets/maps
 
 LIBFT_DIR   = libft/
 LIBFT       = $(LIBFT_DIR)libft.a
@@ -25,6 +25,9 @@ LIBFT       = $(LIBFT_DIR)libft.a
 MLX_DIR     = mlx_linux/
 MLX         = $(MLX_DIR)libmlx.a
 MLX_LINUX   = $(MLX_DIR)libmlx_Linux.a
+
+PRINTF_DIR	= ft_printf/
+PRINTF		= $(PRINTF_DIR)libftprintf.a
 
 SRCS_DIR    = srcs/
 OBJS_DIR    = objs/
@@ -45,7 +48,7 @@ OBJS        = $(addprefix $(OBJS_DIR), $(OBJS_FILES))
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(MLX) $(OBJS)
+$(NAME): $(LIBFT) $(MLX) $(PRINTF) $(OBJS) 
 	@echo "\nCompiling $(BLUE)$(NAME)$(DEF_COLOR)"
 	@$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) -o $(NAME)
 	@echo "\n$(GREEN)$(NAME) compiled!$(DEF_COLOR)"
@@ -63,10 +66,15 @@ $(MLX):
 	@echo "\nCompiling $(BLUE)mlx$(DEF_COLOR)"
 	@make -sC $(MLX_DIR)
 
+$(PRINTF):
+	@echo "\nCompiling $(BLUE)printf$(DEF_COLOR)"
+	@make -sC $(PRINTF_DIR)
+
 clean:
 	rm -rf $(OBJS_DIR)
 	make fclean -sC $(LIBFT_DIR)
 	make clean -sC $(MLX_DIR)
+	make fclean -sC $(PRINTF_DIR)
 
 fclean: clean
 	rm -rf $(NAME)

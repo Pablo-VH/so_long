@@ -25,6 +25,7 @@ int	key_press_hook(int keycode, t_map **map)
 	if (keycode == KEY_ESC)
 	{
 		destroy_all(map);
+		free_map((*map));
 		exit(1);
 	}
 	init_background(map);

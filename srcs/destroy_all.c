@@ -14,7 +14,7 @@
 
 void	destroy_all(t_map **map)
 {
-	if((*map)->sprites.coin)
+	if ((*map)->sprites.coin)
 		mlx_destroy_image((*map)->mlx, (*map)->sprites.coin);
 	if ((*map)->sprites.exit)
 		mlx_destroy_image((*map)->mlx, (*map)->sprites.exit);

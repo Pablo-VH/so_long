@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_exit.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pavicent <pavicent@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/06 18:01:28 by pavicent          #+#    #+#             */
-/*   Updated: 2024/06/06 18:01:30 by pavicent         ###   ########.fr       */
+/*   Created: 2024/04/02 11:25:06 by pavicent          #+#    #+#             */
+/*   Updated: 2024/04/02 11:25:13 by pavicent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "ft_printf.h"
 
-void	find_exit(t_map *map)
+int	ft_putnbr_base(unsigned long n, char *base, int result)
 {
-	int	i;
-	int	j;
+	unsigned long	len_base;
 
-	i = 0;
-	while (map->map[i])
+	len_base = ft_strlen(base);
+	if (n < len_base)
 	{
-		j = 0;
-		while (map->map[i][j])
-		{
-			if (map->map[i][j] == 'E')
-			{
-				map->x_exit = j;
-				map->y_exit = i;
-			}
-			j++;
-		}
-		i++;
+		if (ft_putchar(base[n]) == -1)
+			return (-1);
+		return (result + 1);
 	}
-	map->map[map->y_exit][map->x_exit] = '0';
+	else
+	{
+		result = ft_putnbr_base(n / len_base, base, result);
+		if (result == -1)
+			return (-1);
+		if (ft_putchar(base[n % len_base]) == -1)
+			return (-1);
+		return (result + 1);
+	}
 }

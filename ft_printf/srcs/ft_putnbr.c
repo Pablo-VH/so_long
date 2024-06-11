@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_exit.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pavicent <pavicent@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/06 18:01:28 by pavicent          #+#    #+#             */
-/*   Updated: 2024/06/06 18:01:30 by pavicent         ###   ########.fr       */
+/*   Created: 2024/04/02 11:23:22 by pavicent          #+#    #+#             */
+/*   Updated: 2024/04/02 11:23:43 by pavicent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "ft_printf.h"
 
-void	find_exit(t_map *map)
+int	ft_putnbrpr(int n)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (map->map[i])
+	if (n == -2147483648)
+		return (ft_putstr("-2147483648"));
+	else
 	{
-		j = 0;
-		while (map->map[i][j])
+		if (n < 0)
 		{
-			if (map->map[i][j] == 'E')
-			{
-				map->x_exit = j;
-				map->y_exit = i;
-			}
-			j++;
+			if (ft_putchar('-') == -1)
+				return (-1);
+			n = -n;
+			return (ft_putnbr(n) + 1);
 		}
-		i++;
+		return (ft_putunbr(n));
 	}
-	map->map[map->y_exit][map->x_exit] = '0';
 }

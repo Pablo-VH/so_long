@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_exit.c                                        :+:      :+:    :+:   */
+/*   ft_putunbr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pavicent <pavicent@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/06 18:01:28 by pavicent          #+#    #+#             */
-/*   Updated: 2024/06/06 18:01:30 by pavicent         ###   ########.fr       */
+/*   Created: 2024/04/04 11:47:09 by pavicent          #+#    #+#             */
+/*   Updated: 2024/04/04 11:48:06 by pavicent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "ft_printf.h"
 
-void	find_exit(t_map *map)
+int	ft_putunbr(unsigned int n)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	while (map->map[i])
+	if (n > 9)
 	{
-		j = 0;
-		while (map->map[i][j])
-		{
-			if (map->map[i][j] == 'E')
-			{
-				map->x_exit = j;
-				map->y_exit = i;
-			}
-			j++;
-		}
-		i++;
+		i = ft_putunbr(n / 10);
+		if (i == -1)
+			return (-1);
 	}
-	map->map[map->y_exit][map->x_exit] = '0';
+	if (ft_putchar(n % 10 + '0') == -1)
+		return (-1);
+	i++;
+	return (i);
 }

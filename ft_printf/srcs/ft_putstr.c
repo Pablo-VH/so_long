@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_exit.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pavicent <pavicent@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/06 18:01:28 by pavicent          #+#    #+#             */
-/*   Updated: 2024/06/06 18:01:30 by pavicent         ###   ########.fr       */
+/*   Created: 2024/04/04 12:02:01 by pavicent          #+#    #+#             */
+/*   Updated: 2024/04/04 12:02:04 by pavicent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "ft_printf.h"
 
-void	find_exit(t_map *map)
+int	ft_putstr(char *s)
 {
-	int	i;
-	int	j;
+	int	count;
 
-	i = 0;
-	while (map->map[i])
+	count = 0;
+	if (s == NULL)
+		return (ft_putstr("(null)"));
+	while (s[count] != '\0')
 	{
-		j = 0;
-		while (map->map[i][j])
-		{
-			if (map->map[i][j] == 'E')
-			{
-				map->x_exit = j;
-				map->y_exit = i;
-			}
-			j++;
-		}
-		i++;
+		if (ft_putchar(s[count]) == -1)
+			return (-1);
+		count++;
 	}
-	map->map[map->y_exit][map->x_exit] = '0';
+	return (count);
 }

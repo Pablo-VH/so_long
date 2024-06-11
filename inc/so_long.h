@@ -15,6 +15,7 @@
 
 # include "mlx.h"
 # include "libft.h"
+# include "ft_printf.h"
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdio.h>
@@ -77,6 +78,7 @@ void	destroy_all(t_map **map);
 void	set_mv(int keycode, t_map **map);
 void	set_y(t_map **map, int i);
 void	set_x(t_map **map, int i);
+void	check_exit(t_map **map, char c);
 char	**copy_map(char *argv, char **checker);
 int		check_name(char *argv, char *end);
 int		number_lines(char *argv);
