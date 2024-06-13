@@ -28,10 +28,5 @@ char	**copy_map(char *argv, char **checker)
 			break ;
 		i++;
 	}
-	printf("\ncopy_map: Dentro de checker\n");
-	for (int k = 0; k < i; k++)
-	{
-		printf("%s\n", checker[k]);
-	}
 	return (checker);
 }

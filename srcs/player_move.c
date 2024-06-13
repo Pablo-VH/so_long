@@ -23,6 +23,7 @@ int	player_move(t_map **map, int x, int y)
 	{
 		(*map)->map[(*map)->play.y_pos][(*map)->play.x_pos] = '0';
 		(*map)->play.steps += 1;
+		ft_printf("Steps: %d points: %d\n", (*map)->play.steps, (*map)->play.points);
 		return (1);
 	}
 	if (a == 'C')
@@ -30,6 +31,7 @@ int	player_move(t_map **map, int x, int y)
 		(*map)->map[(*map)->play.y_pos][(*map)->play.x_pos] = '0';
 		(*map)->play.steps += 1;
 		(*map)->play.points += 1;
+		ft_printf("Steps: %d points: %d\n", (*map)->play.steps, (*map)->play.points);
 		if ((*map)->play.points == (*map)->coin)
 			(*map)->map[(*map)->y_exit][(*map)->x_exit] = 'E';
 		return (1);
@@ -43,10 +45,18 @@ void	check_exit(t_map **map, char a)
 	if (a == 'E' && (*map)->play.points ==  (*map)->coin)
 	{
 		(*map)->play.steps += 1;
-		ft_printf("\nSteps: %d\n", (*map)->play.steps);
+		ft_printf("Steps: %d points: %d\n", (*map)->play.steps, (*map)->play.points);
 		destroy_all(map);
 		free_map(*map);
+		end_message(1);
 		exit(1);
-		//deploy_message(1, game);
 	}
+}
+
+void	end_message(int	i)
+{
+	if (i == 0)
+		ft_printf("\nYou closed the window :(\n");
+	if (i == 1)
+		ft_printf("You win! ;)\n");
 }

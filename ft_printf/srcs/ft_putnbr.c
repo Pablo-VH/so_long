@@ -23,7 +23,7 @@ int	ft_putnbrpr(int n)
 			if (ft_putchar('-') == -1)
 				return (-1);
 			n = -n;
-			return (ft_putnbr(n) + 1);
+			return (ft_putnbrpr(n) + 1);
 		}
 		return (ft_putunbr(n));
 	}

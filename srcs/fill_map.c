@@ -32,9 +32,4 @@ void	fill_map(char *argv, t_map *map)
 		i++;
 	}
 	close(fd);
-	printf("fill_map\n");
-	for (int j = 0; j < nl; j++)
-	{
-		printf("%s", map->map[j]);
-	}
 }

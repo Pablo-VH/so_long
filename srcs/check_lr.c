@@ -19,7 +19,6 @@ int	check_lr(t_map *map)
 
 	j = map->w_length - 1;
 	i = 0;
-	printf("%d\n", map->w_length);
 	while (map->map[i])
 	{
 		if (map->map[i][0] != '1')

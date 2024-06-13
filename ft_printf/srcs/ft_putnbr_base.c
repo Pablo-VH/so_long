@@ -16,7 +16,7 @@ int	ft_putnbr_base(unsigned long n, char *base, int result)
 {
 	unsigned long	len_base;
 
-	len_base = ft_strlen(base);
+	len_base = ft_strlenpr(base);
 	if (n < len_base)
 	{
 		if (ft_putchar(base[n]) == -1)

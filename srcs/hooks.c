@@ -15,6 +15,8 @@
 int	close_window(t_map **map)
 {
 	destroy_all(map);
+	free_map(*map);
+	end_message(0);
 	exit(1);
 	return (0);
 }
@@ -26,6 +28,7 @@ int	key_press_hook(int keycode, t_map **map)
 	{
 		destroy_all(map);
 		free_map((*map));
+		end_message(0);
 		exit(1);
 	}
 	init_background(map);

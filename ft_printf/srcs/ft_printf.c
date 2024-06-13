@@ -40,7 +40,7 @@ int	ft_check_format(char format, va_list args)
 	else if (format == 'p')
 		return (ft_hex_pointer(va_arg(args, unsigned long)));
 	else if (format == 'd' || format == 'i')
-		return (ft_putnbr(va_arg(args, int)));
+		return (ft_putnbrpr(va_arg(args, int)));
 	else if (format == 'u')
 		return (ft_putunbr(va_arg(args, unsigned int)));
 	else if (format == 'x')

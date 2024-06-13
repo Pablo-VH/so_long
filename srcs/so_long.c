@@ -22,8 +22,6 @@ int	main(int argc, char **argv)
 	}
 	init_map(argv[1], &map);
 	init_game(&map);
-	printf("Hola");
-	so_end(map);
 	return (0);
 }
 

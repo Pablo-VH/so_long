@@ -18,18 +18,18 @@ void	so_error(int error, t_map *map)
 	{
 		free_map(map);
 		perror("Error al abrir el archivo");
-		exit(2);
+		exit(1);
 	}
 	if (error == 2)
 	{
 		free_map(map);
 		perror("Mapa no valido");
-		exit(-1);
+		exit(1);
 	}
 	if (error == 3)
 	{
 		free_map(map);
 		perror("No hay suficiente memoria");
-		exit(-1);
+		exit(1);
 	}
 }

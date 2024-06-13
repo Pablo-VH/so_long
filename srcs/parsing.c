@@ -33,19 +33,11 @@ void	parsing(char **checker, int x, int y)
 {
 	checker[y][x] = 'P';
 	if (checker[y - 1][x] != 'P' && checker[y - 1][x] != '1')
-	{
 		parsing(checker, x, y - 1);
-	}
 	if (checker[y + 1][x] != 'P' && checker[y + 1][x] != '1')
-	{
 		parsing(checker, x, y + 1);
-	}
 	if (checker[y][x - 1] != 'P' && checker[y][x - 1] != '1')
-	{
 		parsing(checker, x - 1, y);
-	}
 	if (checker[y][x + 1] != 'P' && checker[y][x + 1] != '1')
-	{
 		parsing(checker, x + 1, y);
-	}
 }
