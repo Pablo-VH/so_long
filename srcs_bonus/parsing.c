@@ -32,12 +32,16 @@ int	init_parsing(char **checker, t_map *map)
 void	parsing(char **checker, int x, int y)
 {
 	checker[y][x] = 'P';
-	if (checker[y - 1][x] != 'P' && checker[y - 1][x] != '1')
+	if (checker[y - 1][x] != 'P' && checker[y - 1][x] != '1'
+		&& checker[y - 1][x] != 'F')
 		parsing(checker, x, y - 1);
-	if (checker[y + 1][x] != 'P' && checker[y + 1][x] != '1')
+	if (checker[y + 1][x] != 'P' && checker[y + 1][x] != '1'
+		&& checker[y + 1][x] != 'F')
 		parsing(checker, x, y + 1);
-	if (checker[y][x - 1] != 'P' && checker[y][x - 1] != '1')
+	if (checker[y][x - 1] != 'P' && checker[y][x - 1] != '1'
+		&& checker[y][x - 1] != 'F')
 		parsing(checker, x - 1, y);
-	if (checker[y][x + 1] != 'P' && checker[y][x + 1] != '1')
+	if (checker[y][x + 1] != 'P' && checker[y][x + 1] != '1'
+		&& checker[y][x + 1] != 'F')
 		parsing(checker, x + 1, y);
 }

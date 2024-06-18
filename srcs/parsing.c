@@ -22,10 +22,6 @@ int	init_parsing(char **checker, t_map *map)
 	y = map->play.y_pos;
 	parsing(checker, x, y);
 	i = is_valid(checker);
-	for (int p = 0; p < map->t_length; p++)
-	{
-		printf("%s\n", checker[p]);
-	}
 	return (i);
 }
 

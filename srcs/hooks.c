@@ -37,22 +37,22 @@ int	key_press_hook(int keycode, t_map **map)
 
 void	set_mv(int keycode, t_map **map)
 {
-	if (keycode == KEY_UP)
+	if (keycode == KEY_UP || keycode == KEY_W)
 	{
 		if (player_move(map, (*map)->play.x_pos, (*map)->play.y_pos - 1))
 			set_y(map, -1);
 	}
-	if (keycode == KEY_DOWN)
+	if (keycode == KEY_DOWN || keycode == KEY_S)
 	{
 		if (player_move(map, (*map)->play.x_pos, (*map)->play.y_pos + 1))
 			set_y(map, 1);
 	}
-	if (keycode == KEY_LEFT)
+	if (keycode == KEY_LEFT || keycode == KEY_A)
 	{
 		if (player_move(map, (*map)->play.x_pos - 1, (*map)->play.y_pos))
 			set_x(map, -1);
 	}
-	if (keycode == KEY_RIGHT)
+	if (keycode == KEY_RIGHT || keycode == KEY_D)
 	{
 		if (player_move(map, (*map)->play.x_pos + 1, (*map)->play.y_pos))
 			set_x(map, 1);

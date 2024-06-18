@@ -14,17 +14,21 @@
 
 void	print_img(t_map **map, t_sprites *sprites, int x, int y)
 {
-
 	if ((*map)->map[y][x] == '1')
-		mlx_put_image_to_window((*map)->mlx, (*map)->mlx_win, sprites->wall, x * 64, y * 64);
+		mlx_put_image_to_window((*map)->mlx, (*map)->mlx_win, sprites->wall,
+			x * 64, y * 64);
 	if ((*map)->map[y][x] == '0')
-		mlx_put_image_to_window((*map)->mlx, (*map)->mlx_win, sprites->floor, x * 64, y * 64);
+		mlx_put_image_to_window((*map)->mlx, (*map)->mlx_win, sprites->floor,
+			x * 64, y * 64);
 	if ((*map)->map[y][x] == 'C')
-		mlx_put_image_to_window((*map)->mlx, (*map)->mlx_win, sprites->coin, x * 64, y * 64);
+		mlx_put_image_to_window((*map)->mlx, (*map)->mlx_win, sprites->coin,
+			x * 64, y * 64);
 	if ((*map)->map[y][x] == 'E')
-		mlx_put_image_to_window((*map)->mlx, (*map)->mlx_win, sprites->exit, x * 64, y * 64);
+		mlx_put_image_to_window((*map)->mlx, (*map)->mlx_win, sprites->exit,
+			x * 64, y * 64);
 	if ((*map)->map[y][x] == 'P')
-		mlx_put_image_to_window((*map)->mlx, (*map)->mlx_win, sprites->player, x * 64, y * 64);
+		mlx_put_image_to_window((*map)->mlx, (*map)->mlx_win, sprites->player,
+			x * 64, y * 64);
 }
 
 void	init_background(t_map **map)

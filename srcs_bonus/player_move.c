@@ -18,13 +18,12 @@ int	player_move(t_map **map, int x, int y)
 
 	a = (*map)->map[y][x];
 	check_enemy(map, a);
-	if (a == '1')
-		return (0);
 	if (a == '0')
 	{
 		(*map)->map[(*map)->play.y_pos][(*map)->play.x_pos] = '0';
 		(*map)->play.steps += 1;
-		ft_printf("Steps: %d points: %d\n", (*map)->play.steps, (*map)->play.points);
+		ft_printf("Steps: %d points: %d\n", (*map)->play.steps,
+			(*map)->play.points);
 		return (1);
 	}
 	if (a == 'C')
@@ -32,7 +31,8 @@ int	player_move(t_map **map, int x, int y)
 		(*map)->map[(*map)->play.y_pos][(*map)->play.x_pos] = '0';
 		(*map)->play.steps += 1;
 		(*map)->play.points += 1;
-		ft_printf("Steps: %d points: %d\n", (*map)->play.steps, (*map)->play.points);
+		ft_printf("Steps: %d points: %d\n", (*map)->play.steps,
+			(*map)->play.points);
 		if ((*map)->play.points == (*map)->coin)
 			(*map)->map[(*map)->y_exit][(*map)->x_exit] = 'E';
 		return (1);
@@ -43,10 +43,11 @@ int	player_move(t_map **map, int x, int y)
 
 void	check_exit(t_map **map, char a)
 {
-	if (a == 'E' && (*map)->play.points ==  (*map)->coin)
+	if (a == 'E' && (*map)->play.points == (*map)->coin)
 	{
 		(*map)->play.steps += 1;
-		ft_printf("Steps: %d points: %d\n", (*map)->play.steps, (*map)->play.points);
+		ft_printf("Steps: %d points: %d\n", (*map)->play.steps,
+			(*map)->play.points);
 		destroy_all(map);
 		free_map(*map);
 		end_message(1);
@@ -54,14 +55,14 @@ void	check_exit(t_map **map, char a)
 	}
 }
 
-void	end_message(int	i)
+void	end_message(int i)
 {
 	if (i == 0)
 		ft_printf("\nYou closed the window :(\n");
 	if (i == 1)
 		ft_printf("You win! ;)\n");
 	if (i == 2)
-		ft_printf("You lose :(");
+		ft_printf("You lose :(\n");
 }
 
 void	check_enemy(t_map **map, char a)
@@ -69,7 +70,8 @@ void	check_enemy(t_map **map, char a)
 	if (a == 'F')
 	{
 		(*map)->play.steps += 1;
-		ft_printf("Steps: %d points: %d\n", (*map)->play.steps, (*map)->play.points);
+		ft_printf("Steps: %d points: %d\n", (*map)->play.steps,
+			(*map)->play.points);
 		destroy_all(map);
 		free_map(*map);
 		end_message(2);

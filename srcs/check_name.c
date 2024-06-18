@@ -41,9 +41,9 @@ int	check_name(char *argv, char *end)
 	return (checker);
 }
 
-int check_name2(char *argv, char *end)
+int	check_name2(char *argv, char *end)
 {
 	if (argv == end)
-		return(1);
+		return (1);
 	return (0);
 }

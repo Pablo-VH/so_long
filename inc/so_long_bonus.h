@@ -26,16 +26,32 @@
 #  define KEY_LEFT	65361
 #  define KEY_RIGHT	65363
 #  define KEY_UP	65362
+#  define KEY_S		115
+#  define KEY_A		97
+#  define KEY_D		100
+#  define KEY_W		119
 # endif
+
+typedef struct s_frame
+{
+	void	*frame1;
+	void	*frame2;
+	void	*frame3;
+	void	*frame4;
+}			t_frame;
 
 typedef struct s_sprites
 {
-	void	*player;
 	void	*wall;
 	void	*floor;
-	void	*exit;
 	void	*coin;
-	void	*fire;
+	void	*back;
+	t_frame	player_u;
+	t_frame	player_d;
+	t_frame	player_r;
+	t_frame	player_l;
+	t_frame	enemys;
+	t_frame	exits;
 }			t_sprites;
 
 typedef struct s_player {
@@ -54,6 +70,7 @@ typedef struct s_map
 	int			t_length;
 	int			x_exit;
 	int			y_exit;
+	int			key;
 	char		**map;
 	void		*mlx;
 	void		*mlx_win;
@@ -82,6 +99,13 @@ void	set_x(t_map **map, int i);
 void	end_message(int	i);
 void	check_exit(t_map **map, char c);
 void	check_enemy(t_map **map, char a);
+void	init_enemy(t_sprites *sprites, t_map **map);
+void	init_player(t_sprites *sprites, t_map **map);
+void	init_exit(t_sprites *sprites, t_map **map);
+void	destroy_imgbonus(t_map **map);
+void	findenemy(t_map **map, int counter);
+void	putportal(t_sprites *sprites, t_map **map, int counter);
+void	putenemy(t_map **map, int counter, int x, int y);
 char	**copy_map(char *argv, char **checker);
 int		check_name(char *argv, char *end);
 int 	check_name2(char *argv, char *end);
@@ -98,5 +122,6 @@ int		is_valid(char **checker);
 int		close_window(t_map **map);
 int		key_press_hook(int keycode, t_map **map);
 int		player_move(t_map **map, int x, int y);
+int		animate(t_map **map);
 
 #endif

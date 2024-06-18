@@ -16,17 +16,42 @@ void	destroy_all(t_map **map)
 {
 	if ((*map)->sprites.coin)
 		mlx_destroy_image((*map)->mlx, (*map)->sprites.coin);
-	if ((*map)->sprites.exit)
-		mlx_destroy_image((*map)->mlx, (*map)->sprites.exit);
+	destroy_imgbonus(map);
 	if ((*map)->sprites.wall)
 		mlx_destroy_image((*map)->mlx, (*map)->sprites.wall);
 	if ((*map)->sprites.floor)
 		mlx_destroy_image((*map)->mlx, (*map)->sprites.floor);
-	if ((*map)->sprites.player)
-		mlx_destroy_image((*map)->mlx, (*map)->sprites.player);
 	mlx_destroy_window((*map)->mlx, (*map)->mlx_win);
 	mlx_loop_end((*map)->mlx);
 	mlx_destroy_display((*map)->mlx);
 	free((*map)->mlx);
 	(*map)->mlx = NULL;
+}
+
+void	destroy_imgbonus(t_map **map)
+{
+	if ((*map)->sprites.exits.frame1)
+		mlx_destroy_image((*map)->mlx, (*map)->sprites.exits.frame1);
+	if ((*map)->sprites.exits.frame2)
+		mlx_destroy_image((*map)->mlx, (*map)->sprites.exits.frame2);
+	if ((*map)->sprites.exits.frame3)
+		mlx_destroy_image((*map)->mlx, (*map)->sprites.exits.frame3);
+	if ((*map)->sprites.exits.frame4)
+		mlx_destroy_image((*map)->mlx, (*map)->sprites.exits.frame4);
+	if ((*map)->sprites.player_d.frame1)
+		mlx_destroy_image((*map)->mlx, (*map)->sprites.player_d.frame1);
+	if ((*map)->sprites.player_u.frame1)
+		mlx_destroy_image((*map)->mlx, (*map)->sprites.player_u.frame1);
+	if ((*map)->sprites.player_l.frame1)
+		mlx_destroy_image((*map)->mlx, (*map)->sprites.player_l.frame1);
+	if ((*map)->sprites.player_r.frame1)
+		mlx_destroy_image((*map)->mlx, (*map)->sprites.player_r.frame1);
+	if ((*map)->sprites.enemys.frame1)
+		mlx_destroy_image((*map)->mlx, (*map)->sprites.enemys.frame1);
+	if ((*map)->sprites.enemys.frame2)
+		mlx_destroy_image((*map)->mlx, (*map)->sprites.enemys.frame2);
+	if ((*map)->sprites.enemys.frame3)
+		mlx_destroy_image((*map)->mlx, (*map)->sprites.enemys.frame3);
+	if ((*map)->sprites.enemys.frame4)
+		mlx_destroy_image((*map)->mlx, (*map)->sprites.enemys.frame4);
 }

@@ -51,7 +51,8 @@ BONUS_FILES	= so_long.c init_map.c check_name.c \
 			check_limits.c pos_player.c parsing.c\
 			is_valid.c init_game.c init_img.c find_exit.c\
 			init_background.c hooks.c destroy_all.c\
-			player_move.c\
+			player_move.c init_player.c init_enemy.c\
+			init_exit.c animations.c\
 
 OBJS_FILES  = $(SRCS_FILES:.c=.o)
 
@@ -91,8 +92,8 @@ $(PRINTF):
 	@echo "\nCompiling $(BLUE)printf$(DEF_COLOR)"
 	@make -sC $(PRINTF_DIR)
 
-bonus: $(LIBFT) $(MLX) $(PRINTF) $(OBJS_BONUS) 
-	@echo "\nCompiling $(BLUE)$(NAME)$(DEF_COLOR)"
+bonus: $(NAME_BONUS) $(LIBFT) $(MLX) $(PRINTF) $(OBJS_BONUS) 
+	@echo "\nCompiling $(BLUE)$(NAME_BONUS)$(DEF_COLOR)"
 	@$(CC) $(CFLAGS) $(OBJS_BONUS) $(LDFLAGS) -o $(NAME)
 	@echo "\n$(GREEN)$(NAME) compiled!$(DEF_COLOR)"
 	@echo "$(BOLD_CYAN)\n------------\n| Done! 👌 |\n------------$(DEF_COLOR)"

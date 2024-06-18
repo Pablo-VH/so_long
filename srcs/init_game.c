@@ -27,14 +27,16 @@ void	init_game(t_map **map)
 		free((*map)->mlx);
 		exit(1);
 	}
-	(*map)->mlx_win = mlx_new_window((*map)->mlx, ((*map)->w_length * 64), ((*map)->t_length * 64), "So_long");
-	init_img(&(*map)->sprites, map);	
+	(*map)->mlx_win = mlx_new_window((*map)->mlx, ((*map)->w_length * 64),
+			((*map)->t_length * 64), "So_long");
+	init_img(&(*map)->sprites, map);
 	find_exit(*map);
 	init_background(map);
 	(*map)->play.steps = 0;
 	(*map)->play.points = 0;
 	mlx_hook((*map)->mlx_win, 17, 0, close_window, map);
-	ft_printf("Steps: %d points: %d\n", (*map)->play.steps, (*map)->play.points);
+	ft_printf("Steps: %d points: %d\n", (*map)->play.steps,
+		(*map)->play.points);
 	mlx_hook((*map)->mlx_win, 2, 1L >> 0, key_press_hook, map);
 	mlx_loop((*map)->mlx);
 }
