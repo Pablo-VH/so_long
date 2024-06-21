@@ -25,6 +25,6 @@ int	check_w(t_map *map)
 			return (1);
 		i++;
 	}
-	map->w_length = first;
+	map->width = first;
 	return (0);
 }

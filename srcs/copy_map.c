@@ -28,5 +28,7 @@ char	**copy_map(char *argv, char **checker)
 			break ;
 		i++;
 	}
+	if (checker == NULL)
+		free_aux(checker);
 	return (checker);
 }

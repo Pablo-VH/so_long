@@ -40,7 +40,7 @@ void	init_background(t_map **map)
 	while ((*map)->map[y])
 	{
 		x = 0;
-		while (x < (*map)->w_length)
+		while (x < (*map)->width)
 		{
 			print_img(map, &(*map)->sprites, x, y);
 			x++;

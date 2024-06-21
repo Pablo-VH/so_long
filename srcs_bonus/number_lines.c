@@ -23,7 +23,7 @@ int	number_lines(char *argv)
 	if (fd == -1)
 	{
 		perror ("Error al abrir el archivo");
-		exit(1);
+		return (-1);
 	}
 	while (1)
 	{

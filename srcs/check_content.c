@@ -16,23 +16,20 @@ int	check_content(t_map *map, char *argv)
 {
 	char	**checker;
 	int		i;
-	int		j;
-	int		k;
-	int		l;
 
-	checker = (char **)malloc(sizeof(char *) * (map->t_length + 1));
+	checker = (char **)malloc(sizeof(char *) * (map->height + 1));
 	checker = copy_map(argv, checker);
 	i = check_chars(checker, map);
-	j = check_limits(map);
-	k = check_u_n_d(map);
-	l = check_lr(map);
-	if (i == 1 || j == 1 || k == 1 || l == 1)
+	i += check_limits(map);
+	i += check_ud(map);
+	i += check_lr(map);
+	if (i != 0)
 	{
 		free_aux(checker);
 		return (1);
 	}
 	pos_player(map);
-	if (init_parsing(checker, map) == 1)
+	if (init_fl_fill(checker, map) == 1)
 	{
 		free_aux(checker);
 		return (1);

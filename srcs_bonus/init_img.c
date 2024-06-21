@@ -42,6 +42,6 @@ void	error_create_img(t_sprites *sprite, t_map **map)
 		ft_printf("Error loading images");
 		destroy_all(map);
 		free_map(*map);
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 }

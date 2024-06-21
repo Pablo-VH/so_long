@@ -53,7 +53,7 @@ void	findenemy(t_map **map, int counter)
 	while ((*map)->map[y] != NULL)
 	{
 		x = 0;
-		while (x < (*map)->w_length)
+		while (x < (*map)->width)
 		{
 			if ((*map)->map[y][x] == 'F')
 			{

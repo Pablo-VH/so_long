@@ -51,7 +51,7 @@ void	check_exit(t_map **map, char a)
 		destroy_all(map);
 		free_map(*map);
 		end_message(1);
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 }
 
@@ -60,9 +60,14 @@ void	end_message(int i)
 	if (i == 0)
 		ft_printf("\nYou closed the window :(\n");
 	if (i == 1)
-		ft_printf("You win! ;)\n");
+	{
+		ft_printf(GREEN"▄ ▄ ▄▄▄ ▄ ▄    ▄ ▄ ▄▄▄ ▄ ▄   █         ▀▄ \n"RESET);
+		ft_printf(GREEN"█ █ █ █ █ █    █▄█  █  ███   █     ▀    █ \n"RESET);
+		ft_printf(GREEN" █  █▄█ █▄█    ███ ▄█▄ █▀█   ▄     ▄    █ \n"RESET);
+		ft_printf(GREEN"                                       ▀\n"RESET);
+	}
 	if (i == 2)
-		ft_printf("You lose :(\n");
+		printlose();
 }
 
 void	check_enemy(t_map **map, char a)
@@ -75,6 +80,35 @@ void	check_enemy(t_map **map, char a)
 		destroy_all(map);
 		free_map(*map);
 		end_message(2);
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
+}
+
+void	printlose(void)
+{
+	ft_printf(RED
+		"▓██   ██▓ ▒█████   █    ██     ██▓     ▒█████    ██████ ▓█████\n"
+		RESET);
+	ft_printf(RED
+		" ▒██  ██▒▒██▒  ██▒ ██  ▓██▒   ▓██▒    ▒██▒  ██▒▒██    ▒ ▓█  ▀\n"RESET);
+	ft_printf(RED
+		" ▒██ ██░▒██░  ██▒▓██  ▒██░   ▒██░    ▒██░  ██▒░ ▓██▄   ▒███\n"RESET);
+	ft_printf(RED
+		" ░ ▐██▓░▒██   ██░▓▓█  ░██░   ▒██░    ▒██   ██░  ▒   ██▒▒▓█  ▄\n"RESET);
+	ft_printf(RED
+		" ░ ██▒▓░░ ████▓▒░▒▒█████▓    ░██████▒░ ████▓▒░▒██████▒▒░▒████▒\n"
+		RESET);
+	ft_printf(RED
+		"   ██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒    ░ ▒░▓  ░░ ▒░▒░▒░ ▒ ▒▓▒ ▒ ░░░ ▒░ ░\n"
+		RESET);
+	ft_printf(RED
+		" ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░    ░ ░ ▒  ░  ░ ▒ ▒░ ░ ░▒  ░ ░ ░ ░  ░\n"
+		RESET);
+	ft_printf(RED
+		" ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░      ░ ░   ░ ░ ░ ▒  ░  ░  ░     ░\n"RESET);
+	ft_printf(RED
+		" ░ ░         ░ ░     ░            ░  ░    ░ ░        ░     ░  ░\n"
+		RESET);
+	ft_printf(RED
+		" ░ ░                         ▐                           ▐\n"RESET);
 }

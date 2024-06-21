@@ -19,6 +19,8 @@ int	check_u_n_d(t_map *map)
 
 	i = 0;
 	j = map->t_length - 1;
+	if (!map)
+		return (1);
 	while (map->map[0][i])
 	{
 		if (map->map[0][i] != '1' && map->map[0][i] != '\n')

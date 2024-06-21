@@ -27,6 +27,7 @@ void	pos_player(t_map *map)
 			{
 				map->play.y_pos = i;
 				map->play.x_pos = j;
+				break ;
 			}
 			j++;
 		}

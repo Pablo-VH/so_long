@@ -19,19 +19,19 @@ void	init_game(t_map **map)
 
 	(*map)->mlx = mlx_init();
 	mlx_get_screen_size((*map)->mlx, &x, &y);
-	if (x < ((*map)->w_length * 64) || y < ((*map)->t_length * 64))
+	if (x < ((*map)->width * 64) || y < ((*map)->height * 64))
 	{
-		perror("Mapa muy grande");
+		ft_printf(RED"Map too big"RESET);
 		destroy_all(map);
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
-	(*map)->mlx_win = mlx_new_window((*map)->mlx, ((*map)->w_length * 64),
-			((*map)->t_length * 64), "So_long");
+	(*map)->mlx_win = mlx_new_window((*map)->mlx, ((*map)->width * 64),
+			((*map)->height * 64), "So_long");
 	init_img(&(*map)->sprites, map);
 	find_exit(*map);
-	init_background(map);
 	(*map)->play.steps = 0;
 	(*map)->play.points = 0;
+	init_background(map);
 	mlx_hook((*map)->mlx_win, 17, 0, close_window, map);
 	mlx_loop_hook((*map)->mlx, animate, map);
 	ft_printf("Steps: %d points: %d\n", (*map)->play.steps,

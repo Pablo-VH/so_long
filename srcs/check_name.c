@@ -43,7 +43,28 @@ int	check_name(char *argv, char *end)
 
 int	check_name2(char *argv, char *end)
 {
-	if (argv == end)
-		return (1);
+	int	i;
+
+	i = 0;
+	while (argv[i])
+	{
+		if (argv[i] != end[i])
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	check_name3(char *argv, char *end)
+{
+	int	i;
+
+	i = 0;
+	while (end[i])
+	{
+		if (argv[i] != end[i])
+			return (1);
+		i++;
+	}
 	return (0);
 }

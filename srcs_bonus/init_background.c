@@ -14,25 +14,21 @@
 
 void	print_counter(t_map **map)
 {
-	int	y;
-	int	x;
-	int	steps;
+	int		y;
+	int		x;
 	char	*str;
-	int		pt;
 	char	*points;
 
-	y = (*map)->t_length;
+	y = (*map)->height;
 	x = 1;
-	steps = (*map)->play.steps;
-	pt = (*map)->play.points;
-	points = ft_itoa(pt);
-	str = ft_itoa(steps);
+	points = ft_itoa((*map)->play.points);
+	str = ft_itoa((*map)->play.steps);
 	mlx_string_put((*map)->mlx, (*map)->mlx_win, x * 64, y * 64,
-		0xFFFFFF,"Steps: ");
+		0xFFFFFF, "Steps: ");
 	mlx_string_put((*map)->mlx, (*map)->mlx_win, (x + 2) * 64, y * 64,
 		0xFFFFFF, str);
 	mlx_string_put((*map)->mlx, (*map)->mlx_win, (x + 4) * 64, y * 64,
-		0xFFFFFF,"Points: ");
+		0xFFFFFF, "Points: ");
 	mlx_string_put((*map)->mlx, (*map)->mlx_win, (x + 6) * 64, y * 64,
 		0xFFFFFF, points);
 	free(str);
@@ -84,7 +80,7 @@ void	init_background(t_map **map)
 	while ((*map)->map[y])
 	{
 		x = 0;
-		while (x < (*map)->w_length)
+		while (x < (*map)->width)
 		{
 			print_img(map, &(*map)->sprites, x, y);
 			x++;

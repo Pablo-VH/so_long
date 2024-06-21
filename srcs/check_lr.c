@@ -17,18 +17,11 @@ int	check_lr(t_map *map)
 	int	i;
 	int	j;
 
-	j = map->w_length - 1;
+	j = map->width - 1;
 	i = 0;
 	while (map->map[i])
 	{
-		if (map->map[i][0] != '1')
-			return (1);
-		i++;
-	}
-	i = 0;
-	while (map->map[i])
-	{
-		if (map->map[i][j] != '1')
+		if (map->map[i][0] != '1' || map->map[i][j] != '1')
 			return (1);
 		i++;
 	}

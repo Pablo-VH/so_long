@@ -50,7 +50,7 @@ void	check_exit(t_map **map, char a)
 		destroy_all(map);
 		free_map(*map);
 		end_message(1);
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 }
 
@@ -59,5 +59,10 @@ void	end_message(int i)
 	if (i == 0)
 		ft_printf("\nYou closed the window :(\n");
 	if (i == 1)
-		ft_printf("You win! ;)\n");
+	{
+		ft_printf(GREEN"▄ ▄ ▄▄▄ ▄ ▄    ▄ ▄ ▄▄▄ ▄ ▄   █         ▀▄ \n"RESET);
+		ft_printf(GREEN"█ █ █ █ █ █    █▄█  █  ███   █     ▀    █ \n"RESET);
+		ft_printf(GREEN" █  █▄█ █▄█    ███ ▄█▄ █▀█   ▄     ▄    █ \n"RESET);
+		ft_printf(GREEN"                                       ▀\n"RESET);
+	}
 }

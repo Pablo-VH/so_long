@@ -103,22 +103,3 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-/*
-#include <limits.h>
-int main() 
-{
-	char	a = 'a';
-	char	*str = "Hello, World!";
-	char	*str2 = "Hola mundo!";
-	int		num = 42;
-	int		num2 = INT_MAX;
-	int		num3 = INT_MIN;
-	unsigned int	num4 = UINT_MAX;
-	int		num5 = 125;
-	int		num6 = 125;
-
-	ft_printf(" Char a = %c\n String str = %s\n Diireccion string str2 = %p\n 
-	Num = %i\n Num2 = %d\n Num3 = %d\n Num4 = %u\n Num5 = %x\n Num6 = %X\n", 
-	a, str, str2, num, num2, num3, num4, num5, num6);
-	return (0);
-}*/

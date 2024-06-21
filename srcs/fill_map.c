@@ -20,12 +20,16 @@ void	fill_map(char *argv, t_map *map)
 
 	i = 0;
 	nl = number_lines(argv);
-	map->t_length = nl;
-	map->map = (char **)malloc((sizeof (char *) * (nl + 1)));
+	if (nl == -1 || nl == 0)
+		so_error(4, map);
+	map->height = nl;
+	map->map = (char **)ft_calloc((nl + 1), sizeof(char *));
 	if (!map->map)
-		exit(1);
+		so_error(3, map);
 	map->map[nl] = NULL;
 	fd = open(argv, O_RDONLY);
+	if (fd == -1)
+		so_error(1, map);
 	while (i < nl)
 	{
 		map->map[i] = get_next_line(fd);
