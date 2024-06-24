@@ -17,7 +17,7 @@ int	close_window(t_map **map)
 	destroy_all(map);
 	free_map(*map);
 	end_message(0);
-	exit(EXIT_FAILURE);
+	exit(EXIT_SUCCESS);
 	return (0);
 }
 
@@ -29,7 +29,7 @@ int	key_press_hook(int keycode, t_map **map)
 		destroy_all(map);
 		free_map((*map));
 		end_message(0);
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 	}
 	init_background(map);
 	return (0);

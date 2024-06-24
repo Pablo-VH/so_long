@@ -51,7 +51,7 @@ void	check_exit(t_map **map, char a)
 		destroy_all(map);
 		free_map(*map);
 		end_message(1);
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 	}
 }
 

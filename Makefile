@@ -34,7 +34,7 @@ SRCS_DIR    = srcs/
 OBJS_DIR    = objs/
 SRCS_FILES	= so_long.c init_map.c check_name.c \
 			number_lines.c fill_map.c so_error.c \
-			check_w.c free_map.c map_len.c so_end.c \
+			check_w.c free_map.c map_len.c \
 			check_content.c copy_map.c check_chars.c \
 			free_aux.c check_ud.c check_lr.c \
 			check_limits.c pos_player.c fl_fill.c \
@@ -46,7 +46,7 @@ BONUS_DIR    = srcs_bonus/
 OBJS_BONUS_DIR    = objs_bonus/
 BONUS_FILES	= so_long.c init_map.c check_name.c \
 			number_lines.c fill_map.c so_error.c \
-			check_w.c free_map.c map_len.c so_end.c \
+			check_w.c free_map.c map_len.c \
 			check_content.c copy_map.c check_chars.c \
 			free_aux.c check_ud.c check_lr.c \
 			check_limits.c pos_player.c fl_fill.c \
