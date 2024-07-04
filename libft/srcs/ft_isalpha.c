@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*#include <stdio.h>*/
 
 int	ft_isalpha(int c)
 {
@@ -20,12 +19,3 @@ int	ft_isalpha(int c)
 	else
 		return (0);
 }
-
-/*int main(void)
-{
-	int c = 65;
-	printf("c = %d\n", c);
-	printf("ft_isalpha(c) = %d\n", ft_isalpha(c));
-	printf("isalpha(c) = %d\n", isalpha(c));
-	return (0);
-}*/

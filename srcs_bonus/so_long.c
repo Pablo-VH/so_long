@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 	{
 		return (1);
 	}
-	init_map(argv[1], &map);
-	init_game(&map);
+	init_map_bonus(argv[1], &map);
+	init_game_bonus(&map);
 	return (0);
 }

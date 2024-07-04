@@ -29,6 +29,8 @@ void	init_map(char *argv, t_map **map)
 		so_error(4, *map);
 	if (check_w(*map) == 1)
 		so_error(2, *map);
+	if ((*map)->width > 164 && (*map)->height > 64)
+		so_error(2, *map);
 	if (check_content(*map, argv) == 1)
 		so_error(2, *map);
 }

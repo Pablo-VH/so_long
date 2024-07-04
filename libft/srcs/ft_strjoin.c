@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -42,15 +39,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	new[i] = '\0';
 	return (new);
 }
-
-/*int	main (void)
-{
-	char const	*s1;
-	char const	*s2;
-
-	s1 = "Hol";
-	s2 = "a mundo";
-	printf("%s\n", ft_strjoin(s1, s2));
-	free(ft_strjoin(s1, s2));
-	return (0);
-}*/

@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>*/
 
 char	*ft_strdup(const char *s1)
 {
@@ -27,13 +24,3 @@ char	*ft_strdup(const char *s1)
 	ft_strlcpy(duplicate, s1, len);
 	return ((char *)duplicate);
 }
-
-/*int main(void)
-{
-	char *s1 = "Hello, world!";
-	char *s2 = ft_strdup(s1);
-	printf("s1 = %s\n", s1);
-	printf("s2 = %s\n", s2);
-	free(s2);
-	return (0);
-}*/

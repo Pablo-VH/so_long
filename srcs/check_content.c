@@ -24,10 +24,16 @@ int	check_content(t_map *map, char *argv)
 	i += check_ud(map);
 	i += check_lr(map);
 	if (i != 0)
-		return (free_aux(checker), 1);
+	{
+		free_aux(checker);
+		return (1);
+	}
 	pos_player(map);
 	if (init_fl_fill(checker, map) == 1)
-		return (free_aux(checker), 1);
+	{
+		free_aux(checker);
+		return (1);
+	}
 	free_aux(checker);
 	return (0);
 }

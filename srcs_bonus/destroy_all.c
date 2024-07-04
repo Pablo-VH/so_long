@@ -6,17 +6,17 @@
 /*   By: pavicent <pavicent@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 11:58:45 by pavicent          #+#    #+#             */
-/*   Updated: 2024/06/07 12:35:53 by pavicent         ###   ########.fr       */
+/*   Updated: 2024/06/27 12:35:30 by pavicent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-void	destroy_all(t_map **map)
+void	destroy_all_bonus(t_map **map)
 {
 	if ((*map)->sprites.coin)
 		mlx_destroy_image((*map)->mlx, (*map)->sprites.coin);
-	destroy_imgbonus(map);
+	destroy_imgbonus_bonus(map);
 	if ((*map)->sprites.wall)
 		mlx_destroy_image((*map)->mlx, (*map)->sprites.wall);
 	if ((*map)->sprites.floor)
@@ -28,7 +28,7 @@ void	destroy_all(t_map **map)
 	(*map)->mlx = NULL;
 }
 
-void	destroy_imgbonus(t_map **map)
+void	destroy_imgbonus_bonus(t_map **map)
 {
 	if ((*map)->sprites.exits.frame1)
 		mlx_destroy_image((*map)->mlx, (*map)->sprites.exits.frame1);

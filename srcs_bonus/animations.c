@@ -6,13 +6,13 @@
 /*   By: pavicent <pavicent@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:51:47 by pavicent          #+#    #+#             */
-/*   Updated: 2024/06/17 19:51:50 by pavicent         ###   ########.fr       */
+/*   Updated: 2024/06/27 12:33:18 by pavicent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-int	animate(t_map **map)
+int	animate_bonus(t_map **map)
 {
 	static int	counter;
 
@@ -20,15 +20,15 @@ int	animate(t_map **map)
 		return (1);
 	if (!counter)
 		counter = 0;
-	findenemy(map, counter);
-	putportal(&(*map)->sprites, map, counter);
+	findenemy_bonus(map, counter);
+	putportal_bonus(&(*map)->sprites, map, counter);
 	counter++;
 	if (counter == 3000)
 		counter = 0;
 	return (0);
 }
 
-void	putenemy(t_map **map, int counter, int x, int y)
+void	putenemy_bonus(t_map **map, int counter, int x, int y)
 {
 	if (counter == 750)
 		mlx_put_image_to_window((*map)->mlx, (*map)->mlx_win,
@@ -44,7 +44,7 @@ void	putenemy(t_map **map, int counter, int x, int y)
 			(*map)->sprites.enemys.frame1, x * 64, y * 64);
 }
 
-void	findenemy(t_map **map, int counter)
+void	findenemy_bonus(t_map **map, int counter)
 {
 	int	y;
 	int	x;
@@ -57,7 +57,7 @@ void	findenemy(t_map **map, int counter)
 		{
 			if ((*map)->map[y][x] == 'F')
 			{
-				putenemy(map, counter, x, y);
+				putenemy_bonus(map, counter, x, y);
 			}
 			x++;
 		}
@@ -65,7 +65,7 @@ void	findenemy(t_map **map, int counter)
 	}
 }
 
-void	putportal(t_sprites *sprites, t_map **map, int counter)
+void	putportal_bonus(t_sprites *sprites, t_map **map, int counter)
 {
 	if ((*map)->map[(*map)->y_exit][(*map)->x_exit] == 'E')
 	{

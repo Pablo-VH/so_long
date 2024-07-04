@@ -11,11 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (lst == NULL)
+	if (lst == '\0')
 		return (NULL);
 	while (lst->next)
 	{
@@ -23,22 +22,3 @@ t_list	*ft_lstlast(t_list *lst)
 	}
 	return (lst);
 }
-
-/*int	main(void)
-{
-	t_list	*node1;
-	t_list	*node2;
-	t_list	*node3;
-
-	node1 = ft_lstnew("primer nodo");
-	node2 = ft_lstnew("segundo nodo");
-	node3 = ft_lstnew("ultimo nodo");
-	node1->next = node2;
-	node2->next = node3; 
-	printf("%s\n", (char *)node1->content);
-	printf("%s\n", (char *)ft_lstlast(node1)->content);
-	free(node1);
-	free(node2);
-	free(node3);
-	return (0);
-}*/

@@ -26,14 +26,3 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 	write(fd, "\n", 1);
 }
-
-/*int	main(void)
-{
-	char	*s;
-	int		fd;
-
-	s = "Hola mundo";
-	fd = 1;
-	ft_putendl_fd(s, fd);
-	return (0);
-}*/

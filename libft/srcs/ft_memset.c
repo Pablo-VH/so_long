@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*#include <stdio.h>
-#include <string.h>*/
 
 void	*ft_memset(void *b, int c, size_t len)
 {
@@ -26,18 +24,3 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return ((void *)b);
 }
-
-/*int	main(void)
-{
-	char	*a;
-	int	c;
-	size_t	len;
-
-	c = 512 + 48;
-	len = 1000;
-	printf("%d\n", c);
-	printf("%d\n", (unsigned char)c);
-	printf("Función Pablo: %s\n", (char*)ft_memset(a, c, len));
-	printf("Función original: %s\n", (char *)memset(a, c, len));
-	return (0);
-}*/

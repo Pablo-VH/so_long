@@ -6,13 +6,13 @@
 /*   By: pavicent <pavicent@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 11:12:24 by pavicent          #+#    #+#             */
-/*   Updated: 2024/05/23 11:12:29 by pavicent         ###   ########.fr       */
+/*   Updated: 2024/06/27 12:39:23 by pavicent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-int	map_len(char *str)
+int	map_len_bonus(char *str)
 {
 	int	i;
 

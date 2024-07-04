@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*#include <string.h>
-#include <stdio.h>*/
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
@@ -42,19 +40,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	dst[j] = '\0';
 	return (i);
 }
-
-/*int	main(void)
-{
-	char		dst[15];
-	const char	*src;
-	size_t		dstsize;
-
-	
-	src = "lorem ipsum dolor sit amet";
-	dstsize = 0;
-	printf("Num copiado: %zu\n", ft_strlcpy(dst, src, dstsize));
-	printf("Mi dst: %s\n", dst);
-	printf("Num ori: %zu\n", strlcpy(dst, src, dstsize));
-	printf("%s\n", dst);
-	return (0);
-}*/

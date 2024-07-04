@@ -6,13 +6,13 @@
 /*   By: pavicent <pavicent@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:59:52 by pavicent          #+#    #+#             */
-/*   Updated: 2024/06/17 11:00:11 by pavicent         ###   ########.fr       */
+/*   Updated: 2024/06/27 12:37:47 by pavicent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-void	init_enemy(t_sprites *sprites, t_map **map)
+void	init_enemy_bonus(t_sprites *sprites, t_map **map)
 {
 	int	x;
 	int	y;

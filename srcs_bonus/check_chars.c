@@ -6,13 +6,13 @@
 /*   By: pavicent <pavicent@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:33:38 by pavicent          #+#    #+#             */
-/*   Updated: 2024/05/28 10:33:42 by pavicent         ###   ########.fr       */
+/*   Updated: 2024/06/27 12:33:33 by pavicent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-int	check_chars(char **checker, t_map *map)
+int	check_chars_bonus(char **checker, t_map *map)
 {
 	int	i;
 	int	j;

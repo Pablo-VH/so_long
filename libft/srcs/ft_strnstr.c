@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*#include <string.h>
-#include <stdio.h>*/
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -31,17 +29,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
-/*int	main(void)
-{
-	const char	*s1;
-	const char	*s2;
-	size_t		n;
-
-	n = 8;
-	s1 = "aaabcabcd";
-	s2 = "cd";
-	printf("La diferencia es = %s\n", ft_strnstr(s1, s2, n));
-	//printf("La funcion = %s\n", strnstr(s1, s2, n));
-	return (0);
-}*/

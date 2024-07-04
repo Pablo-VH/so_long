@@ -21,8 +21,10 @@ void	init_game(t_map **map)
 	mlx_get_screen_size((*map)->mlx, &x, &y);
 	if (x < ((*map)->width * 64) || y < ((*map)->height * 64))
 	{
-		ft_printf(RED"Map too big"RESET);
-		destroy_all(map);
+		ft_printf(RED"Map too big\n"RESET);
+		mlx_destroy_display((*map)->mlx);
+		free((*map)->mlx);
+		free_map(*map);
 		exit(EXIT_FAILURE);
 	}
 	(*map)->mlx_win = mlx_new_window((*map)->mlx, ((*map)->width * 64),

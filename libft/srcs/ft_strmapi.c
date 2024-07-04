@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <string.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -34,23 +33,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	result[i] = '\0';
 	return (result);
 }
-
-/*static void	ft_toupper_mapi(unsigned int i, char *c)
-{
-	if (c[i] >= 'a' && c[i] <= 'z')
-		c[i] = c[i] - 'a' + 'A';
-}
-
-int main(void)
-{
-	char *s = "Hola";
-	char (*f)(unsigned int, char);
-	char *result;
-
-	f = &ft_toupper_mapi;
-	result = ft_strmapi(s, f);
-	printf("s = %s\n", s);
-	printf("result = %s\n", result);
-	free(result);
-	return (0);
-}*/

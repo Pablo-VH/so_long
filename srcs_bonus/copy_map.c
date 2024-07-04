@@ -12,7 +12,7 @@
 
 #include "so_long_bonus.h"
 
-char	**copy_map(char *argv, char **checker)
+char	**copy_map_bonus(char *argv, char **checker)
 {
 	int	i;
 	int	fd;

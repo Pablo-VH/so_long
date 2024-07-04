@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*#include <stdio.h>*/
 
 int	ft_isprint(int c)
 {
@@ -20,12 +19,3 @@ int	ft_isprint(int c)
 	else
 		return (0);
 }
-
-/*int main(void)
-{
-	int c = 32;
-	printf("c = %d\n", c);
-	printf("ft_isprint(c) = %d\n", ft_isprint(c));
-	printf("isprint(c) = %d\n", isprint(c));
-	return (0);
-}*/

@@ -6,13 +6,13 @@
 /*   By: pavicent <pavicent@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 12:35:59 by pavicent          #+#    #+#             */
-/*   Updated: 2024/05/27 12:36:03 by pavicent         ###   ########.fr       */
+/*   Updated: 2024/06/27 12:39:34 by pavicent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-int	number_lines(char *argv)
+int	number_lines_bonus(char *argv)
 {
 	int		num_lines;
 	int		fd;

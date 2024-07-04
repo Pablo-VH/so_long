@@ -6,13 +6,13 @@
 /*   By: pavicent <pavicent@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 11:54:33 by pavicent          #+#    #+#             */
-/*   Updated: 2024/05/30 11:54:36 by pavicent         ###   ########.fr       */
+/*   Updated: 2024/06/27 12:39:13 by pavicent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-int	is_valid(char **checker)
+int	is_valid_bonus(char **checker)
 {
 	int	i;
 	int	j;

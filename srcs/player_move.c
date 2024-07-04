@@ -57,7 +57,7 @@ void	check_exit(t_map **map, char a)
 void	end_message(int i)
 {
 	if (i == 0)
-		ft_printf("\nYou closed the window :(\n");
+		ft_printf(RED"\nYou closed the window :(\n"RESET);
 	if (i == 1)
 	{
 		ft_printf(GREEN"▄ ▄ ▄▄▄ ▄ ▄    ▄ ▄ ▄▄▄ ▄ ▄   █         ▀▄ \n"RESET);

@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*#include <stdio.h>*/
 
 int	ft_isascii(int c)
 {
@@ -20,12 +19,3 @@ int	ft_isascii(int c)
 	else
 		return (0);
 }
-
-/*int main(void)
-{
-	int c = 128;
-	printf("c = %d\n", c);
-	printf("ft_isascii(c) = %d\n", ft_isascii(c));
-	printf("isascii(c) = %d\n", isascii(c));
-	return (0);
-}*/

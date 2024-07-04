@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*#include <string.h>
-#include <stdio.h>*/
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -34,17 +32,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	j = str1[i] - str2[i];
 	return (j);
 }
-
-/*int	main(void)
-{
-	const char	*s1;
-	const char	*s2;
-	size_t		n;
-
-	n = 9;
-	s1 = "Holz mundo";
-	s2 = "HolA gente";
-	printf("La diferencia es = %d\n", ft_strncmp(s1, s2, n));
-	printf("La funcion = %d\n", strncmp(s1, s2, n));
-	return (0);
-}*/

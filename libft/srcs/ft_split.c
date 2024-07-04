@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*#include <stdio.h>
-#include <stdlib.h>*/
 
 static size_t	get_word_count(char const *s, char c)
 {
@@ -89,21 +87,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (words);
 }
-
-/*int main() 
-{
-    char const *input_string = "^;
-    char delimiter = '^';
-    char **result = ft_split(input_string, delimiter);
-    if (result) {
-        // Imprimir las palabras divididas
-        for (int i = 0; result[i] != NULL; i++) {
-            printf("Word %d: %s\n", i + 1, result[i]);
-        }
-        // Liberar la memoria asignada
-        free(result);
-    } else {
-        printf("Error al dividir la cadena.\n");
-    }
-    return (0);
-}*/

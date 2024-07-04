@@ -6,13 +6,13 @@
 /*   By: pavicent <pavicent@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 11:02:49 by pavicent          #+#    #+#             */
-/*   Updated: 2024/05/29 11:02:51 by pavicent         ###   ########.fr       */
+/*   Updated: 2024/06/27 12:34:05 by pavicent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-int	check_limits(t_map *map)
+int	check_limits_bonus(t_map *map)
 {
 	if (map->coin < 1)
 		return (1);

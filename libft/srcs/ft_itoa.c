@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 static int	ft_numlen(int n)
 {
@@ -56,12 +55,3 @@ char	*ft_itoa(int n)
 		num[0] = '-';
 	return (num);
 }
-
-/*int	main(void)
-{
-	int	a;
-
-	a = 8797;
-	printf("%s\n", ft_itoa(a));
-	return (0);
-}*/

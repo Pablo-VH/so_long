@@ -6,13 +6,13 @@
 /*   By: pavicent <pavicent@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:49:59 by pavicent          #+#    #+#             */
-/*   Updated: 2024/06/17 10:50:03 by pavicent         ###   ########.fr       */
+/*   Updated: 2024/06/27 12:38:00 by pavicent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-void	init_exit(t_sprites *sprites, t_map **map)
+void	init_exit_bonus(t_sprites *sprites, t_map **map)
 {
 	int	x;
 	int	y;

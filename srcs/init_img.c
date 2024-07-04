@@ -18,7 +18,7 @@ void	init_img(t_sprites *sprites, t_map	**map)
 	int	y;
 
 	sprites->player = mlx_xpm_file_to_image((*map)->mlx,
-			"assets/player64.xpm", &x, &y);
+			"assets/bonus/link/D1.xpm", &x, &y);
 	sprites->exit = mlx_xpm_file_to_image((*map)->mlx,
 			"assets/exit64.xpm", &x, &y);
 	sprites->floor = mlx_xpm_file_to_image((*map)->mlx,

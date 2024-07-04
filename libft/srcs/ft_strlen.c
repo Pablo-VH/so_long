@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*#include <stdio.h>*/
 
 size_t	ft_strlen(const char *s)
 {
@@ -27,12 +26,3 @@ size_t	ft_strlen(const char *s)
 	}
 	return (i);
 }
-
-/*int	main(void)
-{
-	const char	*s;
-
-	s = "Hola mundo";
-	printf("El tamano del string es = %lu\n", ft_strlen(s));
-	return (0);
-}*/

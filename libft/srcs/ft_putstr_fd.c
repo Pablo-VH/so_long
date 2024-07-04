@@ -25,14 +25,3 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
-
-/*int	main(void)
-{
-	char	*s;
-	int		fd;
-
-	s = "Hola Mundo";
-	fd = 1;
-	ft_putstr_fd(s, fd);
-	return (0);
-}*/

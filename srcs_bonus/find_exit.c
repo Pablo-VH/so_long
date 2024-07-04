@@ -6,13 +6,13 @@
 /*   By: pavicent <pavicent@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 18:01:28 by pavicent          #+#    #+#             */
-/*   Updated: 2024/06/06 18:01:30 by pavicent         ###   ########.fr       */
+/*   Updated: 2024/06/27 12:36:07 by pavicent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-void	find_exit(t_map *map)
+void	find_exit_bonus(t_map *map)
 {
 	int	i;
 	int	j;

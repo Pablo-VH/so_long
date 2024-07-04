@@ -84,29 +84,3 @@ char	*get_next_line(int fd)
 	backup = ft_clean_line(line);
 	return (line);
 }
-/*int	main(void)
-{
-	int fd;
-	char *next_line;
-	int count;
-
-	count = 0;
-	fd = open("prueba.txt", O_RDONLY);
-	if (fd == -1)
-	{
-		printf("Error: Could not open file\n");
-		return (1);
-	}
-	while (1)
-	{
-		next_line = get_next_line(fd);
-		if (next_line == NULL)
-			break ;
-		count++;
-		printf("[%d]:%s\n", count, next_line);
-		free(next_line);
-		next_line = NULL;
-	}
-	close(fd);
-	return (0);
-}*/
