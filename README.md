@@ -6,7 +6,7 @@ Este proyecto es un pequeño juego en 2D desarrollado en C. Durante el proyecto 
 
 ## Objetivo
 
-El objetivo es poder crear un juego en 2d de cualquier temática. El jugador deberá poder coger todos los coleccionables que haya en el mapa y alcanzar la salida. En el `bonus`El jugador se encontrará enemigos, en mi caso son fuegos, y tambien deberá alcanzar todos los coleccionablles y llegar a la salida. Si el jugador se choca contra algún enemigo perderá.
+El objetivo es poder crear un juego en 2d de cualquier temática. El jugador deberá poder coger todos los coleccionables que haya en el mapa y alcanzar la salida. En el `bonus` el jugador se encontrará enemigos, en mi caso son fuegos, y tambien deberá alcanzar todos los coleccionablles y llegar a la salida. Si el jugador se choca contra algún enemigo perderá.
 
 ## Tecnologías & Lenguajes usados
 - **Lenguaje:** C
@@ -36,11 +36,11 @@ make
 
 ## Introduction
 
-This project is a small 2D game developed in C. During the project you have to apply the first three projects that you do as a student of 42: `libft`, `ft_printf` and `get_next_line`. With them you will have to be able to read `.ber` files (maps) and do error checking. In order to be able to develop the project and have a window open showing the `sprites` used the `mlx` is used.
+This project is a small 2D game developed in C. During the project you have to apply the first three projects that you do as a student of 42: `libft`, `ft_printf` and `get_next_line`. With them you will have to be able to read `.ber` files (maps) and do error checking. In order to be able to develop the project and have a window open showing the `sprites` used, the `mlx` is used.
 
 ## Objective
 
-The objective is to be able to create a 2d game of any theme. The player must be able to collect all the collectibles on the map and reach the exit. In the `bonus` The player will encounter enemies, in my case they are fires, and also must reach all the collectibles and reach the exit. If the player crashes into any enemy he will lose.
+The objective is to be able to create a 2d game of any theme. The player must be able to collect all the collectibles on the map and reach the exit. In the `bonus` the player will encounter enemies, in my case they are fires, and also must reach all the collectibles and reach the exit. If the player crashes into any enemy he will lose.
 
 ## Technologies & Languages used
 - Language:** C
